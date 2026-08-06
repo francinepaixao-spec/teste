@@ -1,82 +1,119 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog das Borboletas</title>
+<title>Blog do Bolo de Chocolate</title>
 
 <style>
-    body{
-        margin:0;
-        font-family:Arial, Helvetica, sans-serif;
-        background:#f5f5f5;
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fdf8f5;
+        color: #333;
     }
 
-    header{
-        background:linear-gradient(90deg,#7b2cbf,#9d4edd);
-        color:white;
-        text-align:center;
-        padding:25px;
+    header {
+        background: linear-gradient(90deg, #3d2314, #5c3520);
+        color: #f1e4d8;
+        text-align: center;
+        padding: 30px 20px;
     }
 
-    main{
-        max-width:800px;
-        margin:30px auto;
-        background:white;
-        padding:20px;
-        border-radius:12px;
-        box-shadow:0 0 10px rgba(0,0,0,.2);
+    header h1 {
+        margin: 0 0 10px 0;
+        font-size: 2.2rem;
     }
 
-    img{
-        width:100%;
-        border-radius:10px;
+    header p {
+        margin: 0;
+        font-size: 1.1rem;
+        opacity: 0.9;
     }
 
-    h2{
-        color:#6a0dad;
+    main {
+        max-width: 800px;
+        margin: 30px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
-    p{
-        line-height:1.6;
+    img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
     }
 
-    .botoes{
-        margin-top:20px;
-        display:flex;
-        gap:15px;
+    h2 {
+        color: #4a2810;
+        margin-top: 20px;
+        margin-bottom: 15px;
     }
 
-    button{
-        padding:12px 18px;
-        border:none;
-        border-radius:8px;
-        cursor:pointer;
-        color:white;
-        font-size:16px;
-        transition:.3s;
+    p {
+        line-height: 1.7;
+        font-size: 1rem;
     }
 
-    #curtir{
-        background:#e63946;
+    .ingredientes, .modo-preparo {
+        background: #fcf6f0;
+        padding: 18px 20px;
+        border-left: 4px solid #7b3f00;
+        border-radius: 6px;
+        margin: 20px 0;
     }
 
-    #curtir:hover{
-        background:#c1121f;
+    ul, ol {
+        margin: 0;
+        padding-left: 20px;
+        line-height: 1.8;
     }
 
-    #republicar{
-        background:#2a9d8f;
+    .botoes {
+        margin-top: 25px;
+        display: flex;
+        gap: 15px;
     }
 
-    #republicar:hover{
-        background:#1d7874;
+    button {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.1s;
     }
 
-    footer{
-        text-align:center;
-        padding:20px;
-        color:#666;
+    button:active {
+        transform: scale(0.98);
+    }
+
+    #curtir {
+        background: #d62828;
+    }
+
+    #curtir:hover {
+        background: #b11e1e;
+    }
+
+    #republicar {
+        background: #7b3f00;
+    }
+
+    #republicar:hover {
+        background: #5c2e00;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: #777;
+        font-size: 0.9rem;
     }
 </style>
 </head>
@@ -84,20 +121,35 @@
 <body>
 
 <header>
-    <h1>🦋 Blog das Borboletas</h1>
-    <p>Descubra curiosidades, espécies e a importância das borboletas para a natureza.</p>
+    <h1>🍫 Blog do Bolo de Chocolate</h1>
+    <p>Receitas irresistíveis, segredos de confeitaria e o passo a passo para o bolo perfeito.</p>
 </header>
 
 <main>
 
-    <img src="oogle.com/search?q=imagem+de+borboleta+&rlz=1CAOFRB_enBR1225&sca_esv=ead7d5579552a84e&biw=1366&bih=633&sxsrf=APpeQnvI9cpUAxTeLPDKrJCkJtt2R5LhyA%3A1785327917896&ei=LfFpaqynNr-O5" alt="Borboleta">
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80" alt="Fatia de bolo de chocolate fofinho com cobertura">
 
-    <h2>As Borboletas</h2>
+    <h2>O Segredo do Bolo de Chocolate Perfeito</h2>
 
     <p>
-        As borboletas são insetos conhecidos por suas asas coloridas e por seu importante
-        papel na polinização das plantas. Elas passam por um processo chamado metamorfose,
-        que possui quatro fases: ovo, lagarta, pupa e borboleta adulta.
+        Nada substitui o aroma de um bolo de chocolate quentinho saindo do forno. Seja para o café da tarde ou para uma comemoração especial, essa receita é fácil de fazer, fica super fofinha e com uma cobertura cremosa inesquecível.
+    </p>
+
+    <div class="ingredientes">
+        <h3>📝 Ingredientes Principais</h3>
+        <ul>
+            <li>2 xícaras de farinha de trigo</li>
+            <li>1 xícara de cacau em pó (ou achocolatado)</li>
+            <li>1 e 1/2 xícara de açúcar</li>
+            <li>3 ovos</li>
+            <li>1 xícara de leite morno</li>
+            <li>1/2 xícara de óleo</li>
+            <li>1 colher (sopa) de fermento em pó</li>
+        </ul>
+    </div>
+
+    <p>
+        <strong>Dica de Ouro:</strong> Para intensificar o sabor do chocolate, adicione uma pitada de café solúvel na massa. O café realça o cacau sem deixar gosto de café!
     </p>
 
     <div class="botoes">
@@ -113,22 +165,22 @@
 </main>
 
 <footer>
-    © 2026 - Blog das Borboletas
+    © 2026 - Blog do Bolo de Chocolate
 </footer>
 
 <script>
-let likes = 0;
-let shares = 0;
+    let likes = 0;
+    let shares = 0;
 
-document.getElementById("curtir").addEventListener("click", function(){
-    likes++;
-    document.getElementById("likes").textContent = likes;
-});
+    document.getElementById("curtir").addEventListener("click", function(){
+        likes++;
+        document.getElementById("likes").textContent = likes;
+    });
 
-document.getElementById("republicar").addEventListener("click", function(){
-    shares++;
-    document.getElementById("shares").textContent = shares;
-});
+    document.getElementById("republicar").addEventListener("click", function(){
+        shares++;
+        document.getElementById("shares").textContent = shares;
+    });
 </script>
 
 </body>
