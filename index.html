@@ -45,7 +45,7 @@
         max-height: 400px;
         object-fit: cover;
         border-radius: 10px;
-        margin-bottom: 20px;
+        margin: 15px 0;
     }
 
     h2, h3 {
@@ -59,7 +59,7 @@
         font-size: 1rem;
     }
 
-    .ingredientes, .modo-preparo, .historia {
+    .ingredientes, .historia {
         background: #fcf6f0;
         padding: 18px 20px;
         border-left: 4px solid #c36d10;
@@ -67,17 +67,18 @@
         margin: 20px 0;
     }
 
-    ul, ol {
+    ul {
         margin: 0;
         padding-left: 20px;
         line-height: 1.8;
     }
 
     .botoes {
-        margin-top: 25px;
+        margin-top: 30px;
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
+        justify-content: center;
     }
 
     button {
@@ -162,4 +163,67 @@
         <strong>Dica de Ouro:</strong> Para intensificar o sabor do chocolate, adicione uma pitada de café solúvel na massa. O café realça o cacau sem deixar gosto de café!
     </p>
 
-    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1000&q=80" alt="B
+    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1000&q=80" alt="Bolo de chocolate sendo servido">
+
+    <div class="historia">
+        <h3>📜 A História do Bolo de Chocolate</h3>
+        <p>
+            A história do bolo de chocolate começou no século 18, quando descobriu-se como moer grãos de cacau para criar uma massa fluida.
+        </p>
+        <p>
+            Foi apenas em meados do século 19 que as primeiras receitas de bolo usando cacau surgiram. Com a popularização do cacau em pó prensado no mundo todo, a sobremesa se tornou um clássico presente no cotidiano das famílias!
+        </p>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=1000&q=80" alt="Bolo de chocolate decorado">
+
+    <div class="botoes">
+        <button id="curtir">
+            ❤️ Curtir (<span id="likes">0</span>)
+        </button>
+
+        <button id="republicar">
+            🔁 Republicar (<span id="shares">0</span>)
+        </button>
+
+        <button id="compartilhar">
+            📲 Compartilhar
+        </button>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 - Blog do Bolo de Chocolate
+</footer>
+
+<script>
+    let likes = 0;
+    let shares = 0;
+
+    document.getElementById("curtir").addEventListener("click", function(){
+        likes++;
+        document.getElementById("likes").textContent = likes;
+    });
+
+    document.getElementById("republicar").addEventListener("click", function(){
+        shares++;
+        document.getElementById("shares").textContent = shares;
+    });
+
+    document.getElementById("compartilhar").addEventListener("click", function(){
+        if (navigator.share) {
+            navigator.share({
+                title: 'Blog do Bolo de Chocolate',
+                text: 'Confira esse post incrível sobre bolo de chocolate!',
+                url: window.location.href
+            }).catch(function(err){ console.log(err); });
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+            alert("Link copiado para a área de transferência!");
+        }
+    });
+</script>
+
+</body>
+</html>
