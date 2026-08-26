@@ -5,125 +5,199 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog do Bolo de Chocolate</title>
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
+    /* Transição global para efeito suave no modo escuro */
+    * {
+        transition: background-color 0.8s ease, color 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease;
+    }
+
+    :root {
+        --bg-body: #fdf8f5;
+        --bg-card: #ffffff;
+        --bg-box: #fcf6f0;
+        --text-primary: #333333;
+        --text-secondary: #4a2810;
+        --border-color: #c36d10;
+        --shadow-color: rgba(0, 0, 0, 0.08);
+        --header-bg: linear-gradient(135deg, #3d2314, #5c3520);
+        --footer-color: #777777;
+    }
+
+    body.dark-mode {
+        --bg-body: #121212;
+        --bg-card: #1e1e1e;
+        --bg-box: #2a2521;
+        --text-primary: #e0e0e0;
+        --text-secondary: #f3a661;
+        --border-color: #f3a661;
+        --shadow-color: rgba(0, 0, 0, 0.5);
+        --header-bg: linear-gradient(135deg, #1f1109, #331d12);
+        --footer-color: #aaaaaa;
+    }
+
     body {
         margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background: #fdf8f5;
-        color: #333;
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-body);
+        color: var(--text-primary);
     }
 
     header {
-        background: linear-gradient(90deg, #3d2314, #5c3520);
+        background: var(--header-bg);
         color: #f1e4d8;
         text-align: center;
-        padding: 30px 20px;
+        padding: 40px 20px;
+        position: relative;
     }
 
     header h1 {
         margin: 0 0 10px 0;
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+        font-weight: 700;
     }
 
     header p {
         margin: 0;
         font-size: 1.1rem;
         opacity: 0.9;
+        font-weight: 300;
+    }
+
+    /* Botão Alternar Modo Escuro */
+    .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        backdrop-filter: blur(5px);
+    }
+
+    .theme-toggle:hover {
+        background: rgba(255, 255, 255, 0.35);
     }
 
     main {
         max-width: 800px;
-        margin: 30px auto;
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin: -20px auto 40px auto;
+        background-color: var(--bg-card);
+        padding: 35px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px var(--shadow-color);
+        position: relative;
+    }
+
+    .meta-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        color: var(--footer-color);
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+        padding-bottom: 12px;
+    }
+
+    .meta-info a {
+        color: var(--border-color);
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .meta-info a:hover {
+        text-decoration: underline;
     }
 
     img {
         width: 100%;
-        max-height: 400px;
+        max-height: 420px;
         object-fit: cover;
-        border-radius: 10px;
-        margin: 15px 0;
+        border-radius: 12px;
+        margin: 20px 0;
+        box-shadow: 0 4px 12px var(--shadow-color);
     }
 
     h2, h3 {
-        color: #4a2810;
-        margin-top: 25px;
+        color: var(--text-secondary);
+        margin-top: 30px;
         margin-bottom: 15px;
+        font-weight: 600;
     }
 
     p {
-        line-height: 1.7;
-        font-size: 1rem;
+        line-height: 1.8;
+        font-size: 1.05rem;
+        font-weight: 300;
+        text-align: justify;
     }
 
     .ingredientes, .historia {
-        background: #fcf6f0;
-        padding: 18px 20px;
-        border-left: 4px solid #c36d10;
-        border-radius: 6px;
-        margin: 20px 0;
+        background-color: var(--bg-box);
+        padding: 22px 25px;
+        border-left: 5px solid var(--border-color);
+        border-radius: 8px;
+        margin: 25px 0;
+        box-shadow: 0 2px 8px var(--shadow-color);
     }
 
     ul {
         margin: 0;
         padding-left: 20px;
-        line-height: 1.8;
+        line-height: 1.9;
     }
 
     .botoes {
-        margin-top: 30px;
+        margin-top: 35px;
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
         justify-content: center;
     }
 
-    button {
-        padding: 12px 20px;
+    button.btn-action {
+        padding: 12px 24px;
         border: none;
-        border-radius: 8px;
+        border-radius: 30px;
         cursor: pointer;
         color: white;
-        font-size: 16px;
-        font-weight: bold;
-        transition: background 0.3s, transform 0.1s;
+        font-size: 15px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease, background 0.3s ease;
     }
 
-    button:active {
-        transform: scale(0.98);
+    button.btn-action:hover {
+        transform: translateY(-2px);
     }
 
-    #curtir {
-        background: #d62828;
+    button.btn-action:active {
+        transform: translateY(0);
     }
 
-    #curtir:hover {
-        background: #b11e1e;
-    }
+    #curtir { background: #d62828; }
+    #curtir:hover { background: #b11e1e; }
 
-    #republicar {
-        background: #7b3f00;
-    }
+    #republicar { background: #7b3f00; }
+    #republicar:hover { background: #5c2e00; }
 
-    #republicar:hover {
-        background: #5c2e00;
-    }
-
-    #compartilhar {
-        background: #25d366;
-    }
-
-    #compartilhar:hover {
-        background: #5fde8e;
-    }
+    #compartilhar { background: #25d366; }
+    #compartilhar:hover { background: #1eb856; }
 
     footer {
         text-align: center;
-        padding: 20px;
-        color: #777;
+        padding: 25px;
+        color: var(--footer-color);
         font-size: 0.9rem;
     }
 </style>
@@ -132,11 +206,17 @@
 <body>
 
 <header>
+    <button class="theme-toggle" id="toggleTheme">🌙 Modo Escuro</button>
     <h1>🍫 Blog do Bolo de Chocolate</h1>
     <p>Receitas irresistíveis, segredos de confeitaria e o passo a passo para o bolo perfeito.</p>
 </header>
 
 <main>
+
+    <div class="meta-info">
+        <span>✍️ Por: <strong>Ana Confeiteira</strong></span>
+        <span>🔗 Fonte: <a href="https://unsplash.com" target="_blank" rel="noopener">Gastronomia Digital</a></span>
+    </div>
 
     <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80" alt="Fatia de bolo de chocolate fofinho com cobertura">
 
@@ -178,15 +258,15 @@
     <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=1000&q=80" alt="Bolo de chocolate decorado">
 
     <div class="botoes">
-        <button id="curtir">
+        <button class="btn-action" id="curtir">
             ❤️ Curtir (<span id="likes">0</span>)
         </button>
 
-        <button id="republicar">
+        <button class="btn-action" id="republicar">
             🔁 Republicar (<span id="shares">0</span>)
         </button>
 
-        <button id="compartilhar">
+        <button class="btn-action" id="compartilhar">
             📲 Compartilhar
         </button>
     </div>
@@ -194,10 +274,11 @@
 </main>
 
 <footer>
-    © 2026 - Blog do Bolo de Chocolate
+    © 2026 - Blog do Bolo de Chocolate | Todos os direitos reservados.
 </footer>
 
 <script>
+    // Contador de Interações
     let likes = 0;
     let shares = 0;
 
@@ -221,6 +302,18 @@
         } else {
             navigator.clipboard.writeText(window.location.href);
             alert("Link copiado para a área de transferência!");
+        }
+    });
+
+    // Alternância do Modo Escuro Suave
+    const toggleBtn = document.getElementById("toggleTheme");
+    toggleBtn.addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+        
+        if (document.body.classList.contains("dark-mode")) {
+            toggleBtn.textContent = "☀️ Modo Claro";
+        } else {
+            toggleBtn.textContent = "🌙 Modo Escuro";
         }
     });
 </script>
