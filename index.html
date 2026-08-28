@@ -5,27 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog do Bolo de Chocolate</title>
 
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
 <style>
-    /* Transição global para efeito suave no modo escuro */
+    /* Cursor personalizado em formato de bolo (SVG incorporado) */
     * {
         transition: background-color 0.8s ease, color 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease;
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">🍰</text></svg>'), auto !important;
     }
 
     :root {
         --bg-body: #fdf8f5;
         --bg-card: #ffffff;
         --bg-box: #fcf6f0;
-        --text-primary: #333333;
+        --text-primary: #2b2b2b;
         --text-secondary: #4a2810;
         --border-color: #c36d10;
         --shadow-color: rgba(0, 0, 0, 0.08);
         --header-bg: linear-gradient(135deg, #3d2314, #5c3520);
-        --footer-color: #777777;
+        --footer-color: #666666;
+        --source-color: #885522;
     }
 
     body.dark-mode {
@@ -38,11 +39,12 @@
         --shadow-color: rgba(0, 0, 0, 0.5);
         --header-bg: linear-gradient(135deg, #1f1109, #331d12);
         --footer-color: #aaaaaa;
+        --source-color: #d4a373;
     }
 
     body {
         margin: 0;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Lora', serif;
         background-color: var(--bg-body);
         color: var(--text-primary);
     }
@@ -51,24 +53,24 @@
         background: var(--header-bg);
         color: #f1e4d8;
         text-align: center;
-        padding: 40px 20px;
+        padding: 50px 20px;
         position: relative;
     }
 
     header h1 {
         margin: 0 0 10px 0;
-        font-size: 2.5rem;
+        font-size: 2.8rem;
         font-weight: 700;
     }
 
     header p {
         margin: 0;
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         opacity: 0.9;
-        font-weight: 300;
+        font-weight: 400;
+        font-style: italic;
     }
 
-    /* Botão Alternar Modo Escuro */
     .theme-toggle {
         position: absolute;
         top: 20px;
@@ -78,7 +80,6 @@
         color: #fff;
         padding: 8px 16px;
         border-radius: 20px;
-        cursor: pointer;
         font-size: 0.9rem;
         font-weight: 600;
         backdrop-filter: blur(5px);
@@ -92,7 +93,7 @@
         max-width: 800px;
         margin: -20px auto 40px auto;
         background-color: var(--bg-card);
-        padding: 35px;
+        padding: 40px;
         border-radius: 16px;
         box-shadow: 0 10px 30px var(--shadow-color);
         position: relative;
@@ -124,41 +125,49 @@
         max-height: 420px;
         object-fit: cover;
         border-radius: 12px;
-        margin: 20px 0;
+        margin: 20px 0 8px 0;
         box-shadow: 0 4px 12px var(--shadow-color);
+    }
+
+    .fonte-rodape {
+        font-size: 0.82rem;
+        color: var(--source-color);
+        font-style: italic;
+        margin-top: 4px;
+        margin-bottom: 25px;
+        display: block;
     }
 
     h2, h3 {
         color: var(--text-secondary);
-        margin-top: 30px;
+        margin-top: 35px;
         margin-bottom: 15px;
-        font-weight: 600;
+        font-weight: 700;
     }
 
     p {
-        line-height: 1.8;
-        font-size: 1.05rem;
-        font-weight: 300;
-        text-align: justify;
+        line-height: 1.85;
+        font-size: 1.08rem;
+        margin-bottom: 15px;
     }
 
-    .ingredientes, .historia {
+    .ingredientes, .historia, .curiosidades {
         background-color: var(--bg-box);
         padding: 22px 25px;
         border-left: 5px solid var(--border-color);
         border-radius: 8px;
-        margin: 25px 0;
+        margin: 25px 0 8px 0;
         box-shadow: 0 2px 8px var(--shadow-color);
     }
 
-    ul {
+    ul, ol {
         margin: 0;
         padding-left: 20px;
         line-height: 1.9;
     }
 
     .botoes {
-        margin-top: 35px;
+        margin-top: 40px;
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
@@ -169,154 +178,6 @@
         padding: 12px 24px;
         border: none;
         border-radius: 30px;
-        cursor: pointer;
         color: white;
         font-size: 15px;
-        font-weight: 600;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        transition: transform 0.2s ease, background 0.3s ease;
-    }
-
-    button.btn-action:hover {
-        transform: translateY(-2px);
-    }
-
-    button.btn-action:active {
-        transform: translateY(0);
-    }
-
-    #curtir { background: #d62828; }
-    #curtir:hover { background: #b11e1e; }
-
-    #republicar { background: #7b3f00; }
-    #republicar:hover { background: #5c2e00; }
-
-    #compartilhar { background: #25d366; }
-    #compartilhar:hover { background: #1eb856; }
-
-    footer {
-        text-align: center;
-        padding: 25px;
-        color: var(--footer-color);
-        font-size: 0.9rem;
-    }
-</style>
-</head>
-
-<body>
-
-<header>
-    <button class="theme-toggle" id="toggleTheme">🌙 Modo Escuro</button>
-    <h1>🍫 Blog do Bolo de Chocolate</h1>
-    <p>Receitas irresistíveis, segredos de confeitaria e o passo a passo para o bolo perfeito.</p>
-</header>
-
-<main>
-
-    <div class="meta-info">
-        <span>✍️ Por: <strong>Ana Confeiteira</strong></span>
-        <span>🔗 Fonte: <a href="https://unsplash.com" target="_blank" rel="noopener">Gastronomia Digital</a></span>
-    </div>
-
-    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80" alt="Fatia de bolo de chocolate fofinho com cobertura">
-
-    <h2>O Segredo do Bolo de Chocolate Perfeito</h2>
-
-    <p>
-        Nada substitui o aroma de um bolo de chocolate quentinho saindo do forno. Seja para o café da tarde ou para uma comemoração especial, essa receita é fácil de fazer, fica super fofinha e com uma cobertura cremosa inesquecível.
-    </p>
-
-    <div class="ingredientes">
-        <h3>📝 Ingredientes Principais</h3>
-        <ul>
-            <li>2 xícaras de farinha de trigo</li>
-            <li>1 xícara de cacau em pó (ou achocolatado)</li>
-            <li>1 e 1/2 xícara de açúcar</li>
-            <li>3 ovos</li>
-            <li>1 xícara de leite morno</li>
-            <li>1/2 xícara de óleo</li>
-            <li>1 colher (sopa) de fermento em pó</li>
-        </ul>
-    </div>
-
-    <p>
-        <strong>Dica de Ouro:</strong> Para intensificar o sabor do chocolate, adicione uma pitada de café solúvel na massa. O café realça o cacau sem deixar gosto de café!
-    </p>
-
-    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1000&q=80" alt="Bolo de chocolate sendo servido">
-
-    <div class="historia">
-        <h3>📜 A História do Bolo de Chocolate</h3>
-        <p>
-            A história do bolo de chocolate começou no século 18, quando descobriu-se como moer grãos de cacau para criar uma massa fluida.
-        </p>
-        <p>
-            Foi apenas em meados do século 19 que as primeiras receitas de bolo usando cacau surgiram. Com a popularização do cacau em pó prensado no mundo todo, a sobremesa se tornou um clássico presente no cotidiano das famílias!
-        </p>
-    </div>
-
-    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=1000&q=80" alt="Bolo de chocolate decorado">
-
-    <div class="botoes">
-        <button class="btn-action" id="curtir">
-            ❤️ Curtir (<span id="likes">0</span>)
-        </button>
-
-        <button class="btn-action" id="republicar">
-            🔁 Republicar (<span id="shares">0</span>)
-        </button>
-
-        <button class="btn-action" id="compartilhar">
-            📲 Compartilhar
-        </button>
-    </div>
-
-</main>
-
-<footer>
-    © 2026 - Blog do Bolo de Chocolate | Todos os direitos reservados.
-</footer>
-
-<script>
-    // Contador de Interações
-    let likes = 0;
-    let shares = 0;
-
-    document.getElementById("curtir").addEventListener("click", function(){
-        likes++;
-        document.getElementById("likes").textContent = likes;
-    });
-
-    document.getElementById("republicar").addEventListener("click", function(){
-        shares++;
-        document.getElementById("shares").textContent = shares;
-    });
-
-    document.getElementById("compartilhar").addEventListener("click", function(){
-        if (navigator.share) {
-            navigator.share({
-                title: 'Blog do Bolo de Chocolate',
-                text: 'Confira esse post incrível sobre bolo de chocolate!',
-                url: window.location.href
-            }).catch(function(err){ console.log(err); });
-        } else {
-            navigator.clipboard.writeText(window.location.href);
-            alert("Link copiado para a área de transferência!");
-        }
-    });
-
-    // Alternância do Modo Escuro Suave
-    const toggleBtn = document.getElementById("toggleTheme");
-    toggleBtn.addEventListener("click", function() {
-        document.body.classList.toggle("dark-mode");
-        
-        if (document.body.classList.contains("dark-mode")) {
-            toggleBtn.textContent = "☀️ Modo Claro";
-        } else {
-            toggleBtn.textContent = "🌙 Modo Escuro";
-        }
-    });
-</script>
-
-</body>
-</html>
+        font-weight: 60
