@@ -1,0 +1,188 @@
+/* style.css */
+* {
+    transition: background-color 0.8s ease, color 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">🍰</text></svg>'), auto !important;
+}
+
+:root {
+    --bg-body: #fdf8f5;
+    --bg-card: #ffffff;
+    --bg-box: #fcf6f0;
+    --text-primary: #2b2b2b;
+    --text-secondary: #4a2810;
+    --border-color: #ab5e0c;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --header-bg: linear-gradient(135deg, #3d2314, #5c3520);
+    --footer-color: #666666;
+    --source-color: #885522;
+}
+
+body.dark-mode {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --bg-box: #2a2521;
+    --text-primary: #e0e0e0;
+    --text-secondary: #f3a661;
+    --border-color: #f3a661;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --header-bg: linear-gradient(135deg, #1f1109, #331d12);
+    --footer-color: #aaaaaa;
+    --source-color: #d4a373;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+header {
+    background: var(--header-bg);
+    color: #f1e4d8;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.15rem;
+    opacity: 0.9;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+main {
+    max-width: 800px;
+    margin: -20px auto 40px auto;
+    background-color: var(--bg-card);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    position: relative;
+}
+
+.meta-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--footer-color);
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding-bottom: 12px;
+}
+
+.meta-info a {
+    color: var(--border-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.meta-info a:hover {
+    text-decoration: underline;
+}
+
+img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 20px 0 8px 0;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.fonte-rodape {
+    font-size: 0.82rem;
+    color: var(--source-color);
+    font-style: italic;
+    margin-top: 4px;
+    margin-bottom: 25px;
+    display: block;
+}
+
+h2, h3 {
+    color: var(--text-secondary);
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+p {
+    line-height: 1.85;
+    font-size: 1.08rem;
+    margin-bottom: 15px;
+}
+
+.ingredientes, .historia, .curiosidades {
+    background-color: var(--bg-box);
+    padding: 22px 25px;
+    border-left: 5px solid var(--border-color);
+    border-radius: 8px;
+    margin: 25px 0 8px 0;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+ul, ol {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 1.9;
+}
+
+.botoes {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+button.btn-action {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button.btn-action:hover {
+    transform: translateY(-2px);
+}
+
+button.btn-action:active {
+    transform: translateY(0);
+}
+
+#curtir { background: #d62828; }
+#curtir:hover { background: #b11e1e; }
+
+#republicar { background: #7b3f00; }
+#republicar:hover { background: #5c2c00; }
