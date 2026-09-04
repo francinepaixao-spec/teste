@@ -1,59 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog do Bolo de Chocolate</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog do Bolo de Chocolate</title>
+
+<!-- Google Fonts: Lora -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+<!-- Arquivo CSS Externo -->
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <h1>Blog do Bolo de Chocolate</h1>
-        <p>Receitas, histórias e curiosidades sobre o bolo mais amado do mundo.</p>
-        <button class="theme-toggle" id="theme-toggle">Alternar Tema</button>
-    </header>
-    <main>
-        <div class="meta-info">
-            <span>Publicado em 26 de Outubro de 2023</span>
-            <span>Por <a href="#">Maria Confeiteira</a></span>
-        </div>
-        <img src="bolo.jpg" alt="Um delicioso bolo de chocolate">
-        <span class="fonte-rodape">Fonte da imagem: Freepik</span>
-        <h2>Ingredientes</h2>
-        <div class="ingredientes">
-            <ul>
-                <li>2 xícaras de farinha de trigo</li>
-                <li>1 xícara de chocolate em pó</li>
-                <li>1 xícara de açúcar</li>
-                <li>1 xícara de óleo</li>
-                <li>1 xícara de água quente</li>
-                <li>3 ovos</li>
-                <li>1 colher de sopa de fermento em pó</li>
-                <li>1 pitada de sal</li>
-            </ul>
-        </div>
-        <h2>Modo de Preparo</h2>
-        <div class="historia">
-            <ol>
-                <li>Em uma tigela, misture a farinha, o chocolate, o açúcar e o sal.</li>
-                <li>Adicione o óleo, a água quente e os ovos. Misture bem.</li>
-                <li>Por último, adicione o fermento e misture delicadamente.</li>
-                <li>Despeje a massa em uma forma untada e enfarinhada.</li>
-                <li>Leve ao forno preaquecido a 180°C por cerca de 40 minutos.</li>
-            </ol>
-        </div>
-        <h2>Curiosidades</h2>
-        <div class="curiosidades">
-            <p>O bolo de chocolate é um dos bolos mais populares do mundo. A primeira receita de bolo de chocolate foi publicada em 1847 na Filadélfia, nos Estados Unidos.</p>
-        </div>
-        <div class="botoes">
-            <button class="btn-action" id="curtir">Curtir</button>
-            <button class="btn-action" id="republicar">Republicar</button>
-        </div>
-    </main>
-    <script src="script.js"></script>
+
+<header>
+    <button class="theme-toggle" id="toggleTheme">🌙 Modo Escuro</button>
+    <h1>🍫 Blog do Bolo de Chocolate</h1>
+    <p>Guia definitivo, receitas exclusivas, técnicas de confeitaria e história.</p>
+</header>
+
+<main>
+
+    <div class="meta-info">
+        <span>✍️ Por: <strong>Ana Confeiteira</strong></span>
+        <span>📖 Categoria: <strong>Confeitaria Clássica</strong></span>
+    </div>
+
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80" alt="Fatia de bolo de chocolate fofinho com cobertura">
+    <div class="img-caption">Foto 1: Bolo de chocolate fofinho com camada generosa de ganache.</div>
+
+    <h2>O Guia Supremo: Dominando o Bolo de Chocolate Fofinho</h2>
+
+    <p>
+        O bolo de chocolate é uma das sobremesas mais amadas ao redor do mundo. Seja para um lanche da tarde acompanhado de café fresco ou como centro de mesa em celebrações especiais, a combinação perfeita entre massa fofa, aroma marcante e umidade ideal é uma arte acessível a qualquer cozinheiro.
+    </p>
+
+    <p>
+        Para atingir a estrutura perfeita sem que a massa fique pesada ou seca, o segredo reside na emulsão correta dos ingredientes líquidos e na escolha de um cacau em pó de boa qualidade.
+    </p>
+
+    <span class="source-tag">Fonte da informação: Confagri & Gastronomia Profissional Avançada, pág. 120.</span>
+
+    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1000&q=80" alt="Preparo e ingredientes do bolo de chocolate">
+    <div class="img-caption">Foto 2: Ingredientes selecionados para garantir a estrutura macia do bolo.</div>
+
+    <div class="ingredientes">
+        <h3>📝 Ingredientes da Receita Perfeita</h3>
+        <ul>
+            <li>2 xícaras de farinha de trigo peneirada</li>
+            <li>1 xícara de cacau em pó 100% (ou 70%)</li>
+            <li>1 e 1/2 xícara de açúcar refinado ou cristal</li>
+            <li>3 ovos grandes em temperatura ambiente</li>
+            <li>1 xícara de leite integral morno</li>
+            <li>1/2 xícara de óleo vegetal (girassol ou milho)</li>
+            <li>1 colher de sopa de fermento em pó</li>
+            <li>1 colher de chá de bicarbonato de sódio (para reforçar a cor escura)</li>
+            <li>1 pitada de sal</li>
+        </ul>
+    </div>
+
+    <span class="source-tag">Fonte da informação: Livro "A Química do Açúcar e do Cacau", Edição 2022.</span>
+
+    <div class="dicas">
+        <h3>💡 Dicas Avançadas de Preparo</h3>
+        <ol>
+            <li><strong>Intensificação de Sabor:</strong> Adicione 1 colher de chá de café solúvel diluído no leite morno. O café destaca as notas profundas do cacau sem deixar gosto residual.</li>
+            <li><strong>Aeração:</strong> Peneire os ingredientes secos pelo menos duas vezes antes de misturar aos líquidos.</li>
+            <li><strong>Temperatura:</strong> Nunca utilize ovos ou leite gelados; o choque térmico prejudica a ação do fermento.</li>
+        </ol>
+    </div>
+
+    <span class="source-tag">Fonte da informação: Associação Internacional de Chefs Confeiteiros.</span>
+
+    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=1000&q=80" alt="Bolo de chocolate decorado com granulado e calda">
+    <div class="img-caption">Foto 3: Bolo finalizado com cobertura cremosa brilhante.</div>
+
+    <div class="historia">
+        <h3>📜 Do Cacao à Mesa: Uma Jornada Histórica</h3>
+        <p>
+            A história do bolo de chocolate remonta ao século XVIII. Originalmente, o chocolate era consumido predominantemente como uma bebida especiada pelas civilizações Maia e Asteca. Foi apenas no final da década de 1820 que Casparus van Houten desenvolveu um método mecânico para extrair a gordura da amêndoa do cacau, resultando no cacau em pó comercial.
+        </p>
+        <p>
+            Em 1879, a invenção do processo de conchagem por Rodolphe Lindt permitiu a criação de um chocolate mais macio e solúvel, viabilizando sua incorporação direta em massas de bolo. A partir do século XX, as receitas populares de bolos de chocolate se espalharam globalmente, transformando-se num pilar da confeitaria ocidental.
+        </p>
+    </div>
+
+    <span class="source-tag">Fonte da informação: Museu do Chocolate de Colônia & Arquivos Históricos do Cacau.</span>
+
+    <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=1000&q=80" alt="Fatia de bolo com recheio cremoso">
+    <div class="img-caption">Foto 4: Detalhe do recheio cremoso e textura interna aerada.</div>
+
+    <h2>As 10 Melhores Variações Mundiais</h2>
+    <p>
+        O bolo de chocolate assume formas diversas ao redor do planeta:
+    </p>
+    <ul>
+        <li><strong>Sacher Torte (Áustria):</strong> Bolo denso com geleia de damasco e cobertura de chocolate amargo.</li>
+        <li><strong>Brownie (EUA):</strong> Sobremesa compacta, sem fermento, com casquinha crocante e interior macio.</li>
+        <li><strong>Bolo Nega Maluca (Brasil):</strong> Tradicional bolo feito com água fervente e óleo, extremamente fofo.</li>
+        <li><strong>Fondant au Chocolat (França):</strong> Bolo de interior cremoso e escorrendo.</li>
+    </ul>
+
+    <span class="source-tag">Fonte da informação: Atlas da Gastronomia Global, 2024.</span>
+
+    <div class="botoes">
+        <button class="btn-action" id="curtir">
+            ❤️ Curtir (<span id="likes">0</span>)
+        </button>
+
+        <button class="btn-action" id="republicar">
+            🔁 Republicar (<span id="shares">0</span>)
+        </button>
+
+        <button class="btn-action" id="compartilhar">
+            📲 Compartilhar
+        </button>
+    </div>
+
+</main>
+
+<footer>
+    © 2026 - Blog do Bolo de Chocolate | Todos os direitos reservados.
+</footer>
+
+<!-- Arquivo JavaScript Externo -->
+<script src="script.js"></script>
 </body>
 </html>

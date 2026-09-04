@@ -1,7 +1,7 @@
-/* style.css */
+/* Cursor personalizado com imagem SVG de bolo de chocolate */
 * {
     transition: background-color 0.8s ease, color 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease;
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">🍰</text></svg>'), auto !important;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="24" font-size="24">🍰</text></svg>'), auto !important;
 }
 
 :root {
@@ -10,11 +10,10 @@
     --bg-box: #fcf6f0;
     --text-primary: #2b2b2b;
     --text-secondary: #4a2810;
-    --border-color: #ab5e0c;
+    --border-color: #c36d10;
     --shadow-color: rgba(0, 0, 0, 0.08);
     --header-bg: linear-gradient(135deg, #3d2314, #5c3520);
     --footer-color: #666666;
-    --source-color: #885522;
 }
 
 body.dark-mode {
@@ -27,7 +26,6 @@ body.dark-mode {
     --shadow-color: rgba(0, 0, 0, 0.5);
     --header-bg: linear-gradient(135deg, #1f1109, #331d12);
     --footer-color: #aaaaaa;
-    --source-color: #d4a373;
 }
 
 body {
@@ -55,7 +53,6 @@ header p {
     margin: 0;
     font-size: 1.15rem;
     opacity: 0.9;
-    font-weight: 400;
     font-style: italic;
 }
 
@@ -71,6 +68,7 @@ header p {
     font-size: 0.9rem;
     font-weight: 600;
     backdrop-filter: blur(5px);
+    font-family: sans-serif;
 }
 
 .theme-toggle:hover {
@@ -96,16 +94,13 @@ main {
     margin-bottom: 20px;
     border-bottom: 1px solid rgba(0,0,0,0.08);
     padding-bottom: 12px;
+    font-family: sans-serif;
 }
 
 .meta-info a {
     color: var(--border-color);
     text-decoration: none;
     font-weight: 600;
-}
-
-.meta-info a:hover {
-    text-decoration: underline;
 }
 
 img {
@@ -117,13 +112,12 @@ img {
     box-shadow: 0 4px 12px var(--shadow-color);
 }
 
-.fonte-rodape {
-    font-size: 0.82rem;
-    color: var(--source-color);
-    font-style: italic;
-    margin-top: 4px;
+.img-caption {
+    font-size: 0.85rem;
+    color: var(--footer-color);
+    text-align: center;
     margin-bottom: 25px;
-    display: block;
+    font-style: italic;
 }
 
 h2, h3 {
@@ -134,17 +128,30 @@ h2, h3 {
 }
 
 p {
-    line-height: 1.85;
-    font-size: 1.08rem;
+    line-height: 1.9;
+    font-size: 1.1rem;
     margin-bottom: 15px;
 }
 
-.ingredientes, .historia, .curiosidades {
+.source-tag {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--footer-color);
+    background-color: var(--bg-box);
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-style: italic;
+    border-left: 3px solid var(--border-color);
+}
+
+.ingredientes, .historia, .dicas {
     background-color: var(--bg-box);
     padding: 22px 25px;
     border-left: 5px solid var(--border-color);
     border-radius: 8px;
-    margin: 25px 0 8px 0;
+    margin: 25px 0;
     box-shadow: 0 2px 8px var(--shadow-color);
 }
 
@@ -171,18 +178,26 @@ button.btn-action {
     font-weight: 600;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.2s ease, background 0.3s ease;
+    font-family: sans-serif;
 }
 
 button.btn-action:hover {
     transform: translateY(-2px);
 }
 
-button.btn-action:active {
-    transform: translateY(0);
-}
-
 #curtir { background: #d62828; }
 #curtir:hover { background: #b11e1e; }
 
 #republicar { background: #7b3f00; }
-#republicar:hover { background: #5c2c00; }
+#republicar:hover { background: #5c2e00; }
+
+#compartilhar { background: #25d366; }
+#compartilhar:hover { background: #1eb856; }
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--footer-color);
+    font-size: 0.9rem;
+    font-family: sans-serif;
+}

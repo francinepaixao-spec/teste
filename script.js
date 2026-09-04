@@ -1,7 +1,36 @@
-// script.js
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+let likes = 0;
+let shares = 0;
 
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
+document.getElementById("curtir").addEventListener("click", function(){
+    likes++;
+    document.getElementById("likes").textContent = likes;
+});
+
+document.getElementById("republicar").addEventListener("click", function(){
+    shares++;
+    document.getElementById("shares").textContent = shares;
+});
+
+document.getElementById("compartilhar").addEventListener("click", function(){
+    if (navigator.share) {
+        navigator.share({
+            title: 'Blog do Bolo de Chocolate',
+            text: 'Confira esse post completo sobre o bolo de chocolate perfeito!',
+            url: window.location.href
+        }).catch(function(err){ console.log(err); });
+    } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert("Link copiado para a área de transferência!");
+    }
+});
+
+const toggleBtn = document.getElementById("toggleTheme");
+toggleBtn.addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+    
+    if (document.body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️ Modo Claro";
+    } else {
+        toggleBtn.textContent = "🌙 Modo Escuro";
+    }
 });
